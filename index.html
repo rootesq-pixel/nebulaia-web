@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NebulaIA · Tu universo de inteligencia artificial · Android y Windows</title>
+<meta name="description" content="NebulaIA: asistente de IA para Android y Windows con chat en streaming, generación de imágenes, navegador con agente, Coder, terminal y conectores. Hecho por System Error.">
+<meta name="theme-color" content="#07060f">
+<meta property="og:title" content="NebulaIA · Tu universo de inteligencia artificial">
+<meta property="og:description" content="Chat, imágenes, navegador con agente, Coder, terminal y conectores. Para Android y Windows.">
+<meta property="og:image" content="media/demo-poster.jpg">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="is-loading">
+
+<!-- INTRO -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__core">
+    <img class="intro__star" src="img/star.svg" alt="">
+    <div class="intro__ring"></div><div class="intro__ring r2"></div>
+  </div>
+  <div class="intro__name">NebulaIA</div>
+  <div class="intro__bar"><i id="intro-bar"></i></div>
+  <div class="intro__txt mono" id="intro-txt">Alineando galaxias…</div>
+  <button class="intro__skip mono" id="intro-skip" type="button">Saltar ›</button>
+</div>
+
+<canvas id="nebula" aria-hidden="true"></canvas>
+<div class="nebula-fallback" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="warp-flash" id="warp-flash" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"></div></div>
+<div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top" aria-label="NebulaIA, inicio"><img src="img/logo.svg" alt="" width="34" height="34"><span>Nebula<b>IA</b></span></a>
+  <nav class="nav__links" aria-label="Principal">
+    <a href="#dispositivos">Dispositivos</a><a href="#funciones">Funciones</a><a href="#modelos">Modelos</a><a href="#demo">Demo</a><a href="#faq">FAQ</a>
+  </nav>
+  <a class="btn btn--sm btn--grad magnetic" href="#descargar"><span>Descargar</span></a>
+  <button class="nav__burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i></button>
+</header>
+<div class="mnav" id="mnav">
+  <a href="#dispositivos">Dispositivos</a><a href="#funciones">Funciones</a><a href="#modelos">Modelos</a><a href="#demo">Demo</a><a href="#descargar">Descargar</a><a href="#faq">FAQ</a>
+</div>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero__inner">
+    <div class="pill mono reveal-up"><span class="dot"></span> Android · Windows · Hecho por System Error</div>
+    <h1 class="hero__title" id="hero-title" aria-label="NebulaIA">NebulaIA</h1>
+    <p class="hero__tag scramble" data-text="Tu universo de inteligencia artificial">Tu universo de inteligencia artificial</p>
+    <p class="hero__lead reveal-up">Chatea en streaming, genera imágenes, deja que un agente navegue por ti, programa con <b>Coder</b>, abre un terminal de verdad y conecta tus apps. En tu móvil y en tu PC.</p>
+    <div class="hero__cta reveal-up">
+      <a class="btn btn--grad btn--lg magnetic dl-link" data-dl="android" href="https://gofile.io/d/VV51a7Ti" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.38.38 0 00-.66-.38l-1.86 3.22a11.4 11.4 0 00-9.84 0L5.22 5.92a.38.38 0 10-.66.38L6.4 9.48A10.8 10.8 0 001 18h22a10.8 10.8 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg><span>Android <small>APK v1.0.5</small></span></a>
+      <a class="btn btn--glass btn--lg magnetic dl-link" data-dl="winSetup" href="https://gofile.io/d/8yzjYqlw" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.1l7.4-1v7.1H3V5.1zm0 13.8l7.4 1v-7H3v6zm8.2 1.1L21 21.4v-8.4h-9.8v7zm0-15.9v7.1H21V2.6l-9.8 1.5z"/></svg><span>Windows <small>v1.0.0</small></span></a>
+    </div>
+    <ul class="hero__stats mono reveal-up">
+      <li><b data-count="3">3</b> modelos</li><li><b data-count="4">4</b> niveles de potencia</li><li><b data-count="6">6</b> conectores</li><li><b data-count="2">2</b> plataformas</li>
+    </ul>
+  </div>
+  <a class="hero__scroll mono" href="#dispositivos" aria-label="Bajar"><span></span>scroll</a>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee__track mono">
+  <span>Chat en streaming</span><i>✦</i><span>/web · /img · /nota</span><i>✦</i><span>Estudio de imágenes</span><i>✦</i><span>Navegador con agente</span><i>✦</i><span>NebulaIA Coder</span><i>✦</i><span>Terminal estilo Termux</span><i>✦</i><span>GitHub · Cloudflare · OneDrive · Google Drive · Notion · Discord</span><i>✦</i><span>Dictado por voz local</span><i>✦</i>
+  <span>Chat en streaming</span><i>✦</i><span>/web · /img · /nota</span><i>✦</i><span>Estudio de imágenes</span><i>✦</i><span>Navegador con agente</span><i>✦</i><span>NebulaIA Coder</span><i>✦</i><span>Terminal estilo Termux</span><i>✦</i><span>GitHub · Cloudflare · OneDrive · Google Drive · Notion · Discord</span><i>✦</i><span>Dictado por voz local</span><i>✦</i>
+</div></div>
+
+<!-- DISPOSITIVOS (pin + scroll) -->
+<section class="devices" id="dispositivos">
+  <div class="devices__pin">
+    <div class="devices__copy">
+      <div class="kicker mono">01 · Un universo, dos pantallas</div>
+      <h2 class="h2 scramble" data-text="En tu bolsillo y en tu escritorio">En tu bolsillo y en tu escritorio</h2>
+      <ol class="chapters" id="chapters">
+        <li data-n="01" class="is-on"><b>Chat</b><span>Respuestas en streaming con Flash, Pro o Ultra y cuatro niveles de potencia.</span></li>
+        <li data-n="02"><b>Imágenes y Coder</b><span>Pinta lo que describas en el móvil; en el PC, Coder crea el proyecto con editor y vista previa.</span></li>
+        <li data-n="03"><b>Navegador y terminal</b><span>Un agente que navega por ti en un WebView real, y un terminal con PowerShell, CMD o WSL en Windows.</span></li>
+        <li data-n="04"><b>Conectores</b><span>GitHub, Cloudflare, OneDrive, Google Drive, Notion y Discord, a un toque.</span></li>
+      </ol>
+    </div>
+    <div class="stage" id="stage">
+      <div class="laptop" id="laptop">
+        <div class="laptop__lid" id="lid">
+          <div class="laptop__screen">
+            <img class="scr is-on" src="img/pc/chat.webp" alt="NebulaIA para Windows: chat" loading="lazy">
+            <img class="scr" src="img/pc/coder.webp" alt="NebulaIA para Windows: Coder con editor" loading="lazy">
+            <img class="scr" src="img/pc/terminal.webp" alt="NebulaIA para Windows: terminal" loading="lazy">
+            <img class="scr" src="img/pc/connectors.webp" alt="NebulaIA para Windows: complementos" loading="lazy">
+            <div class="glare"></div>
+          </div>
+          <div class="laptop__lidback"><img src="img/logo.svg" alt=""></div>
+        </div>
+        <div class="laptop__base"><div class="laptop__keys"></div><div class="laptop__pad"></div></div>
+      </div>
+      <div class="phone" id="phone">
+        <div class="phone__layer l1"></div><div class="phone__layer l2"></div><div class="phone__layer l3"></div>
+        <div class="phone__back"><img src="img/logo.svg" alt=""></div>
+        <div class="phone__front">
+          <div class="phone__screen">
+            <img class="scr is-on" src="img/app/03_chat.webp" alt="NebulaIA Android: chat" loading="lazy">
+            <img class="scr" src="img/app/04_imagenes.webp" alt="NebulaIA Android: estudio de imágenes" loading="lazy">
+            <img class="scr" src="img/app/06_navegador_agente.webp" alt="NebulaIA Android: navegador con agente" loading="lazy">
+            <img class="scr" src="img/app/08_conectores.webp" alt="NebulaIA Android: conectores" loading="lazy">
+            <div class="glare"></div>
+          </div>
+          <div class="phone__notch"></div>
+        </div>
+      </div>
+      <div class="stage__halo"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNCIONES -->
+<section class="features" id="funciones">
+  <div class="wrap">
+    <div class="kicker mono">02 · Funciones</div>
+    <h2 class="h2 scramble" data-text="Todo lo que cabe en una nebulosa">Todo lo que cabe en una nebulosa</h2>
+    <p class="lead">Cada función sale del código real de la app. Pasa el ratón por las tarjetas.</p>
+
+    <div class="bento">
+      <article class="card holo span-2" data-tilt>
+        <div class="card__head"><span class="ico">💬</span><h3>Chat en streaming</h3></div>
+        <p>Las respuestas llegan palabra a palabra. Elige modelo y potencia, y usa los comandos de complementos <code>/web</code>, <code>/img</code> y <code>/nota</code>.</p>
+        <div class="chatdemo" id="chatdemo">
+          <div class="bub me">¿Me explicas qué es un agujero negro en 3 frases?</div>
+          <div class="bub ai"><span class="typed" data-type="Un agujero negro es una región del espacio donde la gravedad es tan intensa que nada, ni siquiera la luz, puede escapar. Se forma cuando una estrella muy masiva colapsa sobre sí misma. Su frontera, el horizonte de sucesos, marca el punto de no retorno."></span><i class="caret"></i></div>
+          <div class="chips mono"><span>/web</span><span>/img</span><span>/nota</span><span class="g">Pro · Media</span></div>
+        </div>
+      </article>
+
+      <article class="card holo" data-tilt>
+        <div class="card__head"><span class="ico">🎨</span><h3>Estudio de imágenes</h3></div>
+        <p>Describe tu idea y la IA la pinta: estilos Libre, Cine, Anime, Arte, Foto o 3D y formatos 1:1, 9:16 o 16:9. Si un motor falla, salta solo al de respaldo. Guarda en la galería (Pictures/NebulaIA).</p>
+        <div class="paint" id="paint"><img src="img/app/04_imagenes_visor.webp" alt="Imagen generada en NebulaIA" loading="lazy"><canvas></canvas><span class="paint__lbl mono">Pintando estrellas…</span></div>
+      </article>
+
+      <article class="card holo" data-tilt>
+        <div class="card__head"><span class="ico">🧭</span><h3>Navegador con agente</h3></div>
+        <p>Escribe una tarea («busca…», «entra en… y dime…») y NebulaIA navega en un WebView real mostrando cada paso y resaltando lo que toca. En Android, además, «Resumir con IA» y «Enviar al chat».</p>
+        <ul class="steps mono" id="steps">
+          <li>abrir</li><li>buscar</li><li>leer</li><li>clic</li><li>escribir</li><li>desplazar</li><li class="ok">resultado → chat</li>
+        </ul>
+      </article>
+
+      <article class="card holo span-2" data-tilt>
+        <div class="card__head"><span class="ico">⌨️</span><h3>NebulaIA Coder</h3></div>
+        <p>Pide una web o un script y Coder lo guarda como archivos reales en <code>NebulaIA Projects</code>. En Android las webs se arrancan en localhost en el propio móvil; en Windows tienes explorador de archivos, editor Monaco, vista previa y salida.</p>
+        <pre class="code mono" id="code" aria-label="Ejemplo de código"><span class="ln">PROYECTO: hola-nebula</span>
+<span class="typed-code" data-type='&lt;h1&gt;✨ Hola, Nebula&lt;/h1&gt;
+&lt;p&gt;Edita este proyecto o pide a Coder que cree más.&lt;/p&gt;
+&lt;button id="b"&gt;Pulsa&lt;/button&gt;
+&lt;script src="app.js"&gt;&lt;/script&gt;'></span><i class="caret"></i></pre>
+      </article>
+
+      <article class="card holo" data-tilt>
+        <div class="card__head"><span class="ico">🖥️</span><h3>Terminal de verdad</h3></div>
+        <p>En Android, un emulador estilo Termux con PTY real, <code>pkg</code>/<code>apt</code>, <code>vi</code>, <code>nano</code> o <code>htop</code> y barra de teclas propia; si proot no arranca (p. ej. en Xiaomi), un modo directo lo resuelve. En Windows, PowerShell, CMD o WSL.</p>
+        <div class="term mono" id="term"><div class="term__bar"><i></i><i></i><i></i><span>bash</span></div><div class="term__body"></div></div>
+      </article>
+
+      <article class="card holo" data-tilt>
+        <div class="card__head"><span class="ico">🔌</span><h3>Conectores</h3></div>
+        <p>Conecta GitHub, Cloudflare, OneDrive, Google Drive, Notion y Discord. Con uno activo, el chat decide qué herramienta usar, por ejemplo listar tus repos o tus archivos de Drive.</p>
+        <div class="orbit" aria-hidden="true">
+          <img class="orbit__core" src="img/logo.svg" alt="">
+          <div class="orbit__ring"><span>GitHub</span><span>Cloudflare</span><span>OneDrive</span><span>Drive</span><span>Notion</span><span>Discord</span></div>
+        </div>
+      </article>
+
+      <article class="card holo" data-tilt>
+        <div class="card__head"><span class="ico">🎙️</span><h3>Dictado por voz <em class="tag">Windows</em></h3></div>
+        <p>Habla y NebulaIA escribe. Primero usa whisper.cpp incluido en la app, en local y sin internet; si no puede, tiene motores de respaldo.</p>
+        <div class="wave" id="wave" aria-hidden="true"></div>
+      </article>
+
+      <article class="card holo span-3 card--row" data-tilt>
+        <div class="card__head"><span class="ico">🛡️</span><h3>Tus claves, a salvo</h3></div>
+        <p>En Android cada token de conector se verifica con la API real del servicio y se guarda cifrado con AES-GCM y clave en Android Keystore. En Windows los complementos se conectan con OAuth en el navegador y las credenciales se quedan en tu PC.</p>
+        <div class="lock" aria-hidden="true"><span class="mono" id="cipher">AES-GCM · ████████████</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MODELOS -->
+<section class="models" id="modelos">
+  <div class="wrap models__grid">
+    <div>
+      <div class="kicker mono">03 · Elige tu potencia</div>
+      <h2 class="h2 scramble" data-text="Flash, Pro o Ultra">Flash, Pro o Ultra</h2>
+      <p class="lead">Tres modelos y cuatro niveles de potencia. Cambia la combinación y mira cómo se ajusta la creatividad, la longitud de respuesta y el razonamiento. Si un modelo falla, la app prueba sola el siguiente.</p>
+      <div class="seg" role="radiogroup" aria-label="Modelo" id="model-seg">
+        <button type="button" role="radio" aria-checked="false" data-m="0">⚡ Flash</button>
+        <button type="button" role="radio" aria-checked="true" data-m="1" class="on">✦ Pro</button>
+        <button type="button" role="radio" aria-checked="false" data-m="2">🌌 Ultra</button>
+      </div>
+      <label class="power"><span class="mono">Potencia: <b id="power-lbl">Media</b></span>
+        <input type="range" id="power" min="0" max="3" step="1" value="1" aria-label="Potencia">
+        <span class="power__ticks mono"><i>Baja</i><i>Media</i><i>Alta</i><i>Max</i></span>
+      </label>
+      <dl class="params mono">
+        <div><dt>temperature</dt><dd id="p-temp">0.7</dd></div>
+        <div><dt>max_tokens</dt><dd id="p-tok">4096</dd></div>
+        <div><dt>reasoning</dt><dd id="p-rea">medium</dd></div>
+      </dl>
+    </div>
+    <div class="core" id="core" aria-hidden="true">
+      <div class="core__ring r1"></div><div class="core__ring r2"></div><div class="core__ring r3"></div>
+      <div class="core__ball"></div>
+      <div class="core__lbl mono" id="core-lbl">PRO · MEDIA</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="gallery" id="galeria">
+  <div class="gallery__pin">
+    <div class="wrap gallery__head">
+      <div class="kicker mono">04 · Capturas reales</div>
+      <h2 class="h2 scramble" data-text="Un paseo por la app">Un paseo por la app</h2>
+    </div>
+    <div class="gallery__track" id="gtrack">
+      <figure class="shot"><img src="img/app/01_splash.webp" alt="Pantalla de inicio" loading="lazy"><figcaption>Inicio</figcaption></figure>
+      <figure class="shot"><img src="img/app/02_chat_inicio.webp" alt="Chat vacío" loading="lazy"><figcaption>Chat</figcaption></figure>
+      <figure class="shot"><img src="img/app/03_chat_escribiendo.webp" alt="Chat escribiendo" loading="lazy"><figcaption>Streaming</figcaption></figure>
+      <figure class="shot"><img src="img/app/03_modelos.webp" alt="Selector de modelos" loading="lazy"><figcaption>Modelos</figcaption></figure>
+      <figure class="shot"><img src="img/app/04_imagenes.webp" alt="Estudio de imágenes" loading="lazy"><figcaption>Imágenes</figcaption></figure>
+      <figure class="shot"><img src="img/app/05_navegador.webp" alt="Navegador" loading="lazy"><figcaption>Navegador</figcaption></figure>
+      <figure class="shot"><img src="img/app/07_navegador_resultado.webp" alt="Resultado del agente" loading="lazy"><figcaption>Agente</figcaption></figure>
+      <figure class="shot"><img src="img/app/08_conector_github.webp" alt="Conector de GitHub" loading="lazy"><figcaption>GitHub</figcaption></figure>
+      <figure class="shot"><img src="img/app/09_chat_conectores.webp" alt="Chat usando conectores" loading="lazy"><figcaption>Chat + conectores</figcaption></figure>
+      <figure class="shot"><img src="img/app/10_ajustes.webp" alt="Ajustes" loading="lazy"><figcaption>Ajustes</figcaption></figure>
+      <figure class="shot"><img src="img/app/11_menu_lateral.webp" alt="Menú lateral" loading="lazy"><figcaption>Menú</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section class="demo" id="demo">
+  <div class="wrap demo__grid">
+    <div>
+      <div class="kicker mono">05 · Demo</div>
+      <h2 class="h2 scramble" data-text="Un minuto, todas las funciones">Un minuto, todas las funciones</h2>
+      <p class="lead">El vídeo oficial de la app para Android: chat, imágenes, navegador con agente y conectores en menos de un minuto.</p>
+      <p class="credit">Música: «Dreams Become Real», Kevin MacLeod (incompetech.com), CC BY 4.0.</p>
+    </div>
+    <div class="demo__phone holo" data-tilt>
+      <video id="demo-video" src="media/nebulaia-demo.mp4" poster="media/demo-poster.jpg" preload="none" playsinline controls></video>
+    </div>
+  </div>
+</section>
+
+<!-- DESCARGAS -->
+<section class="download" id="descargar">
+  <div class="wrap">
+    <div class="kicker mono">06 · Descargar</div>
+    <h2 class="h2 scramble" data-text="Salta al hiperespacio">Salta al hiperespacio</h2>
+    <p class="lead">Elige tu plataforma. Las descargas están en Gofile: en la página que se abre, pulsa el botón de descarga.</p>
+
+    <div class="dl">
+      <article class="dlcard holo" data-tilt>
+        <div class="dlcard__os"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.38.38 0 00-.66-.38l-1.86 3.22a11.4 11.4 0 00-9.84 0L5.22 5.92a.38.38 0 10-.66.38L6.4 9.48A10.8 10.8 0 001 18h22a10.8 10.8 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg></div>
+        <h3>Android</h3>
+        <p class="mono meta"><span data-v="android.version">v1.0.5</span> · APK · <span data-v="android.size">22,1 MB</span></p>
+        <p>Android 8.0 o superior. Incluye el terminal con su arreglo para Xiaomi.</p>
+        <a class="btn btn--grad btn--block magnetic dl-link" data-dl="android" href="https://gofile.io/d/VV51a7Ti" target="_blank" rel="noopener"><span>Descargar APK</span></a>
+        <p class="hash mono">MD5 <span data-v="android.md5">0506cf379767caebdaa96bf163b602c6</span></p>
+      </article>
+      <article class="dlcard holo featured" data-tilt>
+        <div class="dlcard__os"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.1l7.4-1v7.1H3V5.1zm0 13.8l7.4 1v-7H3v6zm8.2 1.1L21 21.4v-8.4h-9.8v7zm0-15.9v7.1H21V2.6l-9.8 1.5z"/></svg></div>
+        <h3>Windows · Instalador</h3>
+        <p class="mono meta"><span data-v="winSetup.version">v1.0.0</span> · .exe · <span data-v="winSetup.size">168,9 MB</span></p>
+        <p>Windows de 64 bits. Se instala como cualquier programa de Windows.</p>
+        <a class="btn btn--grad btn--block magnetic dl-link" data-dl="winSetup" href="https://gofile.io/d/8yzjYqlw" target="_blank" rel="noopener"><span>Descargar instalador</span></a>
+        <p class="hash mono">MD5 <span data-v="winSetup.md5">e5cda8b98905b6abd492791db7674725</span></p>
+      </article>
+      <article class="dlcard holo" data-tilt>
+        <div class="dlcard__os"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6h-8l-2-2H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V8a2 2 0 00-2-2zm-6 10h-2v-2h2v2zm0-4h-2v-2h2v2zm2 2h-2v-2h2v2zm0-4h-2V8h2v2z"/></svg></div>
+        <h3>Windows · Portable</h3>
+        <p class="mono meta"><span data-v="winZip.version">v1.0.0</span> · .zip · <span data-v="winZip.size">202,0 MB</span></p>
+        <p>Sin instalación: descomprime la carpeta y ejecuta <code>NebulaIA.exe</code>.</p>
+        <a class="btn btn--glass btn--block magnetic dl-link" data-dl="winZip" href="https://gofile.io/d/vLayRMxk" target="_blank" rel="noopener"><span>Descargar ZIP</span></a>
+        <p class="hash mono">MD5 <span data-v="winZip.md5">3f586e7de7514e5cd3d798873e4cf1f8</span></p>
+      </article>
+    </div>
+
+    <div class="howto">
+      <div class="tabs" role="tablist" aria-label="Instrucciones de instalación">
+        <button type="button" role="tab" aria-selected="true" aria-controls="t-and" id="tab-and" class="on">Instalar en Android</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="t-win" id="tab-win">Instalar en Windows</button>
+      </div>
+      <ol class="howto__steps" id="t-and" role="tabpanel" aria-labelledby="tab-and">
+        <li><b>Descarga el APK</b> desde el botón de Android (en Gofile, pulsa descargar).</li>
+        <li><b>Permite instalar apps desconocidas</b> para tu navegador o gestor de archivos cuando Android te lo pida (Ajustes → Aplicaciones → Acceso especial → Instalar apps desconocidas).</li>
+        <li><b>Abre el archivo</b> y pulsa Instalar. Si Play Protect muestra un aviso por ser una app de fuera de Google Play, elige instalar de todos modos.</li>
+        <li><b>Abre NebulaIA</b> y desliza desde el borde izquierdo para ver el panel lateral. La primera vez que abras el Terminal descargará su entorno (unos 30 MB).</li>
+      </ol>
+      <ol class="howto__steps" id="t-win" role="tabpanel" aria-labelledby="tab-win" hidden>
+        <li><b>Descarga el instalador</b> (o el ZIP portable si prefieres no instalar nada).</li>
+        <li><b>Ejecuta <code>NebulaIA-Setup-1.0.0.exe</code>.</b> Si Windows SmartScreen avisa de que el editor es desconocido, pulsa «Más información» y luego «Ejecutar de todas formas».</li>
+        <li><b>Versión portable:</b> haz clic derecho en el ZIP → «Extraer todo» y abre <code>NebulaIA.exe</code> dentro de la carpeta.</li>
+        <li><b>Listo.</b> Tus proyectos de Coder se guardan en <code>Documentos\NebulaIA Projects</code>.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap faq__wrap">
+    <div class="kicker mono">07 · Preguntas</div>
+    <h2 class="h2 scramble" data-text="Preguntas frecuentes">Preguntas frecuentes</h2>
+    <details><summary>¿Qué necesito para usarla?</summary><p>En el móvil, Android 8.0 o superior. En el ordenador, Windows de 64 bits. Para chatear, generar imágenes y navegar hace falta conexión a internet.</p></details>
+    <details><summary>¿Por qué Android me avisa al instalar el APK?</summary><p>Porque la app se instala desde un archivo y no desde Google Play. Es normal: permite «instalar apps desconocidas» para la app con la que abres el APK y sigue los pasos de arriba.</p></details>
+    <details><summary>¿Y el aviso de SmartScreen en Windows?</summary><p>SmartScreen avisa con los programas que todavía no tienen firma ni reputación. Pulsa «Más información» → «Ejecutar de todas formas». Si prefieres no instalar nada, usa la versión portable.</p></details>
+    <details><summary>¿Necesito tener Termux instalado?</summary><p>No. NebulaIA lleva su propio emulador de terminal y, la primera vez, descarga el entorno oficial de Termux (unos 30 MB) dentro de la app. Funcionan <code>pkg</code>, <code>apt</code>, <code>vi</code>, <code>nano</code>, <code>top</code> o <code>htop</code>. Si proot no arranca en tu móvil (pasa en algunos Xiaomi), la app usa un modo directo.</p></details>
+    <details><summary>¿Es seguro conectar mis cuentas?</summary><p>En Android, cada token se comprueba contra la API real del servicio y se guarda cifrado con AES-GCM y clave en Android Keystore. En Windows, la conexión se hace con OAuth en tu navegador y las credenciales se guardan solo en tu PC.</p></details>
+    <details><summary>¿Dónde guarda Coder mis proyectos?</summary><p>En una carpeta real llamada <code>NebulaIA Projects</code>: en Documentos del móvil (si das acceso a archivos; si no, en la carpeta interna de la app) y en <code>Documentos\NebulaIA Projects</code> en Windows.</p></details>
+    <details><summary>¿El dictado por voz necesita internet?</summary><p>En Windows, primero usa whisper.cpp incluido en la app, que funciona en local y sin internet. Solo si no está disponible recurre a otros motores.</p></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap final__inner">
+    <img class="final__logo" src="img/logo.svg" alt="" width="96" height="96">
+    <h2 class="h2 final__title">Tu universo de IA te espera</h2>
+    <div class="hero__cta">
+      <a class="btn btn--grad btn--lg magnetic dl-link" data-dl="android" href="https://gofile.io/d/VV51a7Ti" target="_blank" rel="noopener"><span>Android</span></a>
+      <a class="btn btn--glass btn--lg magnetic dl-link" data-dl="winSetup" href="https://gofile.io/d/8yzjYqlw" target="_blank" rel="noopener"><span>Windows</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <a class="nav__brand" href="#top"><img src="img/logo.svg" alt="" width="28" height="28"><span>Nebula<b>IA</b></span></a>
+    <p>Hecho por <b>System Error</b> · NebulaIA para Android y Windows</p>
+    <p class="mono small">Las respuestas de la IA pueden contener errores. Comprueba la información importante.</p>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="js/nebula.js" defer></script>
+<script src="js/fx.js" defer></script>
+<script src="js/app.js" defer></script>
+</body>
+</html>
